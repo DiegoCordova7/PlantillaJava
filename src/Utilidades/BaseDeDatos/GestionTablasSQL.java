@@ -3,7 +3,6 @@ import Utilidades.Estructuras.Lista;
 import java.sql.*;
 import java.util.Arrays;
 import java.util.Objects;
-
 import static Utilidades.Impresora.*;
 /**
 	* Esta clase proporciona funcionalidades para gestionar tablas dentro de una base de datos SQL.
@@ -146,7 +145,6 @@ public class GestionTablasSQL {
 								nombreEsquema, nombreTabla, nombreColumna, nuevoTipo
 				);
 				ejecutarConsultaSQL(conexion, consultaCambioTipo, "Alterar columna (tipo)", nombreTabla);
-
 				if (restricciones != null) {
 						for (RestriccionSQL restriccion : restricciones) {
 								String consultaRestriccion = String.format("ALTER TABLE %s.%s ALTER COLUMN %s SET %s;",
