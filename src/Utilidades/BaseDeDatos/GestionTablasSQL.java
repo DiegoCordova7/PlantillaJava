@@ -140,10 +140,19 @@ public class GestionTablasSQL {
 			* @param nombreColumna El nombre de la columna a modificar.
 			* @param nuevoTipo     El nuevo tipo de datos para la columna.
 			*/
-		public void modificarColumna(Connection conexion, String nombreEsquema, String nombreTabla, String nombreColumna,
-		                             String nuevoTipo, RestriccionSQL... restricciones) {
-				String consulta = String.format("ALTER TABLE %s.%s ALTER COLUMN %s TYPE %s;", nombreEsquema, nombreTabla,
-								nombreColumna, nuevoTipo);
-				ejecutarConsultaSQL(conexion, consulta, "Modificar columna", nombreTabla);
+		public void modificarColumna(Connection conexion, String nombreEsquema, String nombreTabla,
+		                             String nombreColumna, String nuevoTipo, RestriccionSQL... restricciones) {
+				String consultaCambioTipo = String.format("ALTER TABLE %s.%s ALTER COLUMN %s TYPE %s;",
+								nombreEsquema, nombreTabla, nombreColumna, nuevoTipo
+				);
+				ejecutarConsultaSQL(conexion, consultaCambioTipo, "Alterar columna (tipo)", nombreTabla);
+
+				if (restricciones != null) {
+						for (RestriccionSQL restriccion : restricciones) {
+								String consultaRestriccion = String.format("ALTER TABLE %s.%s ALTER COLUMN %s SET %s;",
+												nombreEsquema, nombreTabla, nombreColumna, restriccion.getSQL());
+								ejecutarConsultaSQL(conexion, consultaRestriccion, "Alterar columna (restriccion)", nombreTabla);
+						}
+				}
 		}
 }
