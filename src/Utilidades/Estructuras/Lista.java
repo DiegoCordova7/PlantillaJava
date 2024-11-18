@@ -3,7 +3,6 @@ import Utilidades.Impresiones.ListaConVinetas;
 import Utilidades.Impresiones.ListaNumerada;
 import Utilidades.Impresora;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 /**
  * Esta clase proporciona una estructura de lista que permite agregar,
@@ -19,12 +18,13 @@ public final class Lista {
         elementos = new ArrayList<>();
     }
     /**
-     * Agrega uno o mas elementos a la lista.
+     * Agrega uno o mas elementos a la lista. Los elementos pueden ser de diferentes tipos.
      *
-     * @param elementosAAgregar Un arreglo de cadenas que contiene los elementos a agregar.
+     * @param elementosAAgregar Un número variable de elementos, que se convierten a cadenas.
      */
-    public void agregar(String... elementosAAgregar) {
-        elementos.addAll(Arrays.asList(elementosAAgregar));
+    public void agregar(Object... elementosAAgregar) {
+        for (Object elemento : elementosAAgregar)
+            elementos.add(String.valueOf(elemento));
     }
     /**
      * Elimina un elemento de la lista en el indice especificado.

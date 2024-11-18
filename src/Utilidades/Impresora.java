@@ -10,16 +10,16 @@ public class Impresora {
      *
      * @param mensaje El mensaje a imprimir.
      */
-    public static void imprimir(String mensaje) {
-        ImpresionMensajes.imprimir(mensaje);
+    public static <T> void imprimir(T mensaje) {
+        ImpresionMensajes.imprimir(String.valueOf(mensaje));
     }
     /**
      * Imprime un mensaje en la consola sin salto de linea.
      *
      * @param mensaje El mensaje a imprimir.
      */
-    public static void imprimirSeguido(String mensaje) {
-        ImpresionMensajes.imprimirSeguido(mensaje);
+    public static <T> void imprimirSeguido(T mensaje) {
+        ImpresionMensajes.imprimirSeguido(String.valueOf(mensaje));
     }
     /**
      * Imprime un espacio en blanco en la consola.
