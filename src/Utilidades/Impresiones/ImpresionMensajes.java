@@ -26,6 +26,7 @@ public class ImpresionMensajes extends Impresora {
     public static void imprimirSeguido(String mensaje) {
         System.out.print(mensaje);
     }
+
     /**
      * Imprime una linea en blanco en la consola.
      */

@@ -1,4 +1,4 @@
-Aplicación X - Documentación de Uso
+Aplicación X - Documentación de Uso Algun dia
 Descripción
 La Aplicación X es una plantilla modular en Java para aplicaciones de consola. Su estructura facilita la creación y gestión de menús, tablas, listas y la captura de datos de usuario de manera eficiente. Este README proporciona una guía para configurar el proyecto, iniciar la aplicación y hacer uso de sus principales funcionalidades.
 

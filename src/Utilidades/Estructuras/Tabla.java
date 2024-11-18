@@ -39,7 +39,6 @@ public final class Tabla {
         else
             Impresora.imprimirError("Indice fuera de rango", "El indice especificado no es valido.");
     }
-
     /**
      * Imprime la tabla en la consola, mostrando el encabezado y las filas de datos.
      */
