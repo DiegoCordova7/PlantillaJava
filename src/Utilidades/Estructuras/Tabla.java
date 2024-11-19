@@ -7,9 +7,11 @@ import java.util.List;
  * de datos, junto con un encabezado para las columnas.
  */
 public final class Tabla {
-    private List<Fila> filas;
+    private String titulo;
     private String[] encabezado;
-    public Tabla(String[] encabezado) {
+    private List<Fila> filas;
+    public Tabla(String titulo ,String[] encabezado) {
+        this.titulo = titulo;
         this.encabezado = encabezado;
         this.filas = new ArrayList<>();
     }
@@ -46,7 +48,7 @@ public final class Tabla {
         String[][] tabla = new String[filas.size()][];
         for (int i = 0; i < filas.size(); i++)
             tabla[i] = filas.get(i).getDatos();
-        Impresora.imprimirTabla(tabla, encabezado);
+        Impresora.imprimirTabla(tabla, encabezado, titulo);
     }
     /**
      * Agrega una nueva columna a la tabla.

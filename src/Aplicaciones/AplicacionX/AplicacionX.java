@@ -16,12 +16,6 @@ public class AplicacionX extends AplicacionBase {
 			*/
 		@Override
 		protected void logicaApp() {
-				String[] encabezadoTabla1 = {"Nombre", "Apellido", "Edad"};
-				Tabla tabla1 = new Tabla(encabezadoTabla1);
-				tabla1.agregarFila("Diego Emilio", "Cordova Ciscomani", 19);
-				tabla1.agregarFila("Santiago", "Cordova Ciscomani", 15);
-				tabla1.agregarColumna("Promedio");
-				tabla1.actualizarDato(1, 4 , 10.0);
-				tabla1.imprimir();
+
 		}
 }

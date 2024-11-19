@@ -70,8 +70,8 @@ public class Impresora {
      * @param tabla La tabla a imprimir.
      * @param encabezado Los encabezados de la tabla.
      */
-    public static void imprimirTabla(String[][] tabla, String[] encabezado) {
-        ImpresionTabla.imprimirTabla(tabla, encabezado);
+    public static void imprimirTabla(String[][] tabla, String[] encabezado, String titulo) {
+        ImpresionTabla.imprimirTabla(tabla, encabezado, titulo);
     }
     /**
      * Itera sobre las opciones e imprime cada una de ellas.
